@@ -506,3 +506,128 @@ footer {
   .btn { width: 100%; max-width: 300px; }
   section { padding: 3rem 0 !important; }
 }
+
+/* ================= HEADER ================= */
+
+.header {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+}
+
+/* ===== LOGOS ===== */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-group img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===== NAV MENU ===== */
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #f1592a;
+}
+
+.btn-nav {
+  background: #f1592a;
+  color: white !important;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+/* ===== HAMBURGER ===== */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #222;
+  transition: 0.3s;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  /* SHOW MENU WHEN CHECKED */
+  #menu-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  /* ANIMATE HAMBURGER TO X */
+  #menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px,5px);
+  }
+
+  #menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px,-6px);
+  }
+
+}
+/* ===== NAVBAR LOGO ===== */
+
+.logo img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
